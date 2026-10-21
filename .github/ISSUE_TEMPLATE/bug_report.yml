@@ -1,0 +1,52 @@
+name: Hata bildirimi
+description: Tekrar üretilebilen bir uygulama hatasını bildir.
+title: "[Hata] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Güvenlik açığı için SECURITY.md içindeki özel bildirim yolunu kullan.
+        Parola, anahtar, çerez, giriş dosyası, hesap önbelleği veya gerçek e-posta adresi paylaşma.
+        Ekran görüntülerinde yalnız sentetik veriler kullan. Günlükleri ve kişisel dosya yollarını paylaşmadan önce temizle.
+  - type: input
+    id: version
+    attributes:
+      label: SGB Limit sürümü
+      placeholder: 2.4.0
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows ve ekran düzeni
+      description: Windows sürümü, ekran ölçeği, ekran sayısı ve ilgili görev çubuğu ayarı.
+      placeholder: Windows 11, %125, tek ekran, ortalanmış görev çubuğu
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Tekrar üretme adımları
+      description: Kişisel hesap bilgisi vermeden hataya nasıl ulaşıldığını açıkla.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Beklenen davranış
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Gerçekleşen davranış
+      description: Gerekirse yalnız sentetik verilerle hazırlanmış görüntü ekle.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Paylaşım kontrolü
+      options:
+        - label: Bu bildirime gerçek e-posta, parola, anahtar, çerez, giriş dosyası veya hesap önbelleği eklemedim.
+          required: true

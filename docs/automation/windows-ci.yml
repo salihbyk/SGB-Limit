@@ -1,0 +1,51 @@
+name: Windows CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-verify:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Set up .NET 10
+        uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Test Release
+        run: dotnet test .\tests\TokenTray.Tests\TokenTray.Tests.csproj -c Release
+
+      - name: Build Release for Windows x64
+        run: dotnet build .\src\TokenTray\TokenTray.csproj -c Release -r win-x64
+
+      - name: Verify native WPF with synthetic data
+        run: |
+          $exe = (Resolve-Path .\src\TokenTray\bin\Release\net10.0-windows10.0.17763.0\win-x64\SGBLimit.exe).Path
+          $proofDir = Join-Path $env:GITHUB_WORKSPACE 'artifacts\synthetic-proof'
+          $probe = Start-Process -FilePath $exe -ArgumentList @('--verify', ('"{0}"' -f $proofDir)) -WindowStyle Hidden -Wait -PassThru
+          if ($probe.ExitCode -ne 0) {
+            throw "Synthetic WPF verification failed with exit code $($probe.ExitCode)."
+          }
+
+      - name: Upload synthetic WPF proof
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: synthetic-wpf-proof
+          path: artifacts/synthetic-proof/
+          if-no-files-found: warn
+          retention-days: 7

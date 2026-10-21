@@ -1,0 +1,6 @@
+{
+  "origin": "Authored SGB Pulse waveform rendered from geometric drawing code during this project",
+  "method": "System.Drawing multi-size Windows ICO; no photo, stock asset, external logo or image-generation model",
+  "source": "work/build-pulse-icon.ps1 in the authoring workspace",
+  "note": "The internal asset filename is inherited; the pixels are the new SGB Pulse waveform. Upstream MIT attribution remains in LICENSE."
+}

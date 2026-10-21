@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T00:55:08.288Z",
+  "title": "Historical design system: SGB Pulse 2.2",
+  "extensions": {
+    "platform": "Native Windows WPF. HTML/CSS components are self-contained documentation translations, not application runtime or native capture evidence.",
+    "sourceFiles": [
+      "src/TokenTray/Theme.cs",
+      "src/TokenTray/DynamicIsland.cs",
+      "src/TokenTray/FloatingIsland.cs",
+      "src/TokenTray/Settings.cs",
+      "src/TokenTray/PulseSettings.cs",
+      "src/TokenTray/PulseCompact.cs",
+      "src/TokenTray/WidgetRenderer.cs",
+      "src/TokenTray/ProviderMark.cs",
+      "src/TokenTray/PulseOverview.cs",
+      "src/TokenTray/FlyoutWindow.xaml",
+      "src/TokenTray.Core/Models.cs",
+      "src/TokenTray.Core/PulseAdvice.cs"
+    ],
+    "evidence": "docs/proof/2.2: dinamik-kapali-ornek.png, dinamik-acik-ornek.png, dinamik-acik-150.png, ada-halo-ornek.png, ada-orbit-ornek.png, ada-comet-ornek.png, gorev-cubugu-identity.png, gorev-cubugu-dar-ornek.png and panel-ornek-100.png. native-window contains shown-window pointer and circular-bound tests; its collapsed departure capture is intentionally Free. Labeled synthetic native component captures; live account captures are separate and non-distributable. Portable examples below are not native evidence.",
+    "colorMeta": {
+      "charcoal": {
+        "role": "neutral",
+        "displayName": "Charcoal",
+        "tonalRamp": [
+          "oklch(15% 0.015 225)",
+          "oklch(26% 0.015 225)",
+          "oklch(37% 0.015 225)",
+          "oklch(49% 0.015 225)",
+          "oklch(60% 0.015 225)",
+          "oklch(72% 0.015 225)",
+          "oklch(84% 0.015 225)",
+          "oklch(95% 0.015 225)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised Charcoal",
+        "tonalRamp": [
+          "oklch(15% 0.018 215)",
+          "oklch(26% 0.018 215)",
+          "oklch(37% 0.018 215)",
+          "oklch(49% 0.018 215)",
+          "oklch(60% 0.018 215)",
+          "oklch(72% 0.018 215)",
+          "oklch(84% 0.018 215)",
+          "oklch(95% 0.018 215)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "sage": {
+        "role": "primary",
+        "displayName": "Sage",
+        "tonalRamp": [
+          "oklch(15% 0.065 157)",
+          "oklch(26% 0.065 157)",
+          "oklch(37% 0.065 157)",
+          "oklch(49% 0.065 157)",
+          "oklch(60% 0.065 157)",
+          "oklch(72% 0.065 157)",
+          "oklch(84% 0.065 157)",
+          "oklch(95% 0.065 157)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "reading-white": {
+        "role": "neutral",
+        "displayName": "Reading White",
+        "tonalRamp": [
+          "oklch(15% 0.01 260)",
+          "oklch(26% 0.01 260)",
+          "oklch(37% 0.01 260)",
+          "oklch(49% 0.01 260)",
+          "oklch(60% 0.01 260)",
+          "oklch(72% 0.01 260)",
+          "oklch(84% 0.01 260)",
+          "oklch(95% 0.01 260)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "metadata-gray": {
+        "role": "neutral",
+        "displayName": "Metadata Gray",
+        "tonalRamp": [
+          "oklch(15% 0.03 265)",
+          "oklch(26% 0.03 265)",
+          "oklch(37% 0.03 265)",
+          "oklch(49% 0.03 265)",
+          "oklch(60% 0.03 265)",
+          "oklch(72% 0.03 265)",
+          "oklch(84% 0.03 265)",
+          "oklch(95% 0.03 265)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "quota-track": {
+        "role": "neutral",
+        "displayName": "Quota Track",
+        "tonalRamp": [
+          "oklch(15% 0.035 265)",
+          "oklch(26% 0.035 265)",
+          "oklch(37% 0.035 265)",
+          "oklch(49% 0.035 265)",
+          "oklch(60% 0.035 265)",
+          "oklch(72% 0.035 265)",
+          "oklch(84% 0.035 265)",
+          "oklch(95% 0.035 265)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "claude-peach": {
+        "role": "secondary",
+        "displayName": "Claude Peach",
+        "tonalRamp": [
+          "oklch(15% 0.09 55)",
+          "oklch(26% 0.09 55)",
+          "oklch(37% 0.09 55)",
+          "oklch(49% 0.09 55)",
+          "oklch(60% 0.09 55)",
+          "oklch(72% 0.09 55)",
+          "oklch(84% 0.09 55)",
+          "oklch(95% 0.09 55)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "codex-mint": {
+        "role": "secondary",
+        "displayName": "Codex Mint",
+        "tonalRamp": [
+          "oklch(15% 0.1 175)",
+          "oklch(26% 0.1 175)",
+          "oklch(37% 0.1 175)",
+          "oklch(49% 0.1 175)",
+          "oklch(60% 0.1 175)",
+          "oklch(72% 0.1 175)",
+          "oklch(84% 0.1 175)",
+          "oklch(95% 0.1 175)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "antigravity-blue": {
+        "role": "secondary",
+        "displayName": "Antigravity Blue",
+        "tonalRamp": [
+          "oklch(15% 0.075 245)",
+          "oklch(26% 0.075 245)",
+          "oklch(37% 0.075 245)",
+          "oklch(49% 0.075 245)",
+          "oklch(60% 0.075 245)",
+          "oklch(72% 0.075 245)",
+          "oklch(84% 0.075 245)",
+          "oklch(95% 0.075 245)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "cursor-violet": {
+        "role": "secondary",
+        "displayName": "Cursor Violet",
+        "tonalRamp": [
+          "oklch(15% 0.12 300)",
+          "oklch(26% 0.12 300)",
+          "oklch(37% 0.12 300)",
+          "oklch(49% 0.12 300)",
+          "oklch(60% 0.12 300)",
+          "oklch(72% 0.12 300)",
+          "oklch(84% 0.12 300)",
+          "oklch(95% 0.12 300)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "grok-silver": {
+        "role": "secondary",
+        "displayName": "Grok Silver",
+        "tonalRamp": [
+          "oklch(15% 0.005 285)",
+          "oklch(26% 0.005 285)",
+          "oklch(37% 0.005 285)",
+          "oklch(49% 0.005 285)",
+          "oklch(60% 0.005 285)",
+          "oklch(72% 0.005 285)",
+          "oklch(84% 0.005 285)",
+          "oklch(95% 0.005 285)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "provider-cyan": {
+        "role": "secondary",
+        "displayName": "Provider Cyan",
+        "tonalRamp": [
+          "oklch(15% 0.09 220)",
+          "oklch(26% 0.09 220)",
+          "oklch(37% 0.09 220)",
+          "oklch(49% 0.09 220)",
+          "oklch(60% 0.09 220)",
+          "oklch(72% 0.09 220)",
+          "oklch(84% 0.09 220)",
+          "oklch(95% 0.09 220)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "caution-amber": {
+        "role": "tertiary",
+        "displayName": "Caution Amber",
+        "tonalRamp": [
+          "oklch(15% 0.14 75)",
+          "oklch(26% 0.14 75)",
+          "oklch(37% 0.14 75)",
+          "oklch(49% 0.14 75)",
+          "oklch(60% 0.14 75)",
+          "oklch(72% 0.14 75)",
+          "oklch(84% 0.14 75)",
+          "oklch(95% 0.14 75)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "exhausted-red": {
+        "role": "tertiary",
+        "displayName": "Exhausted Red",
+        "tonalRamp": [
+          "oklch(15% 0.17 30)",
+          "oklch(26% 0.17 30)",
+          "oklch(37% 0.17 30)",
+          "oklch(49% 0.17 30)",
+          "oklch(60% 0.17 30)",
+          "oklch(72% 0.17 30)",
+          "oklch(84% 0.17 30)",
+          "oklch(95% 0.17 30)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "island-black": {
+        "role": "neutral",
+        "displayName": "Island Black",
+        "tonalRamp": [
+          "oklch(15% 0.01 255)",
+          "oklch(26% 0.01 255)",
+          "oklch(37% 0.01 255)",
+          "oklch(49% 0.01 255)",
+          "oklch(60% 0.01 255)",
+          "oklch(72% 0.01 255)",
+          "oklch(84% 0.01 255)",
+          "oklch(95% 0.01 255)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "island-stroke": {
+        "role": "neutral",
+        "displayName": "Island Stroke",
+        "tonalRamp": [
+          "oklch(15% 0.01 250)",
+          "oklch(26% 0.01 250)",
+          "oklch(37% 0.01 250)",
+          "oklch(49% 0.01 250)",
+          "oklch(60% 0.01 250)",
+          "oklch(72% 0.01 250)",
+          "oklch(84% 0.01 250)",
+          "oklch(95% 0.01 250)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "island-hover": {
+        "role": "neutral",
+        "displayName": "Island Hover",
+        "tonalRamp": [
+          "oklch(15% 0.012 245)",
+          "oklch(26% 0.012 245)",
+          "oklch(37% 0.012 245)",
+          "oklch(49% 0.012 245)",
+          "oklch(60% 0.012 245)",
+          "oklch(72% 0.012 245)",
+          "oklch(84% 0.012 245)",
+          "oklch(95% 0.012 245)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      },
+      "trae-green": {
+        "role": "secondary",
+        "displayName": "TRAE Green",
+        "tonalRamp": [
+          "oklch(15% 0.14 160)",
+          "oklch(26% 0.14 160)",
+          "oklch(37% 0.14 160)",
+          "oklch(49% 0.14 160)",
+          "oklch(60% 0.14 160)",
+          "oklch(72% 0.14 160)",
+          "oklch(84% 0.14 160)",
+          "oklch(95% 0.14 160)"
+        ],
+        "rampPurpose": "Synthesized documentation swatch only; application colors are the frontmatter primitives."
+      }
+    },
+    "typographyMeta": {
+      "settings-title": {
+        "displayName": "Settings heading",
+        "purpose": "Settings view title; native text rather than a marketing display face."
+      },
+      "quota-reading": {
+        "displayName": "Compact quota",
+        "purpose": "Right-aligned account-row percentage."
+      },
+      "gauge-reading": {
+        "displayName": "Gauge percentage",
+        "purpose": "Twelve-DIP semibold percentages beneath floating provider marks."
+      },
+      "island-reading": {
+        "displayName": "Expanded island quota",
+        "purpose": "Separate reported windows within each expanded Dynamic Island account column."
+      },
+      "island-metadata": {
+        "displayName": "Expanded island metadata",
+        "purpose": "Muted reported amount details and reset captions beneath the relevant expanded quota."
+      },
+      "amount-detail": {
+        "displayName": "Reported amount detail",
+        "purpose": "Muted service-reported amount and units below each expanded compact-panel quota."
+      },
+      "floating-caption": {
+        "displayName": "Floating mode caption",
+        "purpose": "Central used/remaining caption beneath the pulse grip."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "dynamic-size",
+        "value": "240ms ExponentialEase, Exponent=5, EaseOut",
+        "purpose": "Native width and height transition; saved motion and Windows animation permission gate animation. Keyboard focus also expands."
+      },
+      {
+        "name": "dynamic-collapse-delay",
+        "value": "240ms DispatcherTimer",
+        "purpose": "Departure schedules collapse; re-entry cancels it and mouse or keyboard focus within prevents collapse. Escape collapses immediately."
+      },
+      {
+        "name": "island-hover",
+        "value": "180ms opacity 0.85 to 1",
+        "purpose": "Floating-gauge hover feedback when saved motion and Windows animation permission allow."
+      },
+      {
+        "name": "comet",
+        "value": "100ms timer; 3000ms phase cycle",
+        "purpose": "Hover-only decorative orbit point. Stops on leave, hide, refresh or close; quota values remain fixed."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-max",
+        "value": "410 WPF DIP, clamped to work area width minus 24 DIP"
+      },
+      {
+        "name": "settings-max",
+        "value": "520 WPF DIP, clamped to work area width minus 24 DIP"
+      }
+    ],
+    "nativeLayout": {
+      "units": "WPF device-independent pixels; Windows DPI and saved island scale determine physical pixels.",
+      "presentations": [
+        "DynamicIsland (new-install default)",
+        "Taskbar",
+        "Floating"
+      ],
+      "dynamic": {
+        "visibleSlots": "3/5/8 upper bound, further reduced to fit the work area; +N opens the complete account list.",
+        "expandedWindows": "At most two MainWindows plus Binding if distinct: at most three per account.",
+        "sizing": "Content measured; scale clamped 0.85 to 1.15.",
+        "anchor": "Size changes preserve selected edge or center; free coordinates clamp to work area."
+      },
+      "orbit": {
+        "regular": "At most six peripheral buttons: radius 68, canvas 196, total 218 before scale.",
+        "wide": "More than six peripheral buttons: radius 90, canvas 240, total 262 before scale.",
+        "overflow": "Seven accounts maximum, or six plus +N when more than seven exist."
+      },
+      "taskbar": {
+        "styles": [
+          "Rings",
+          "Ribbon",
+          "Dial",
+          "Flow"
+        ],
+        "options": [
+          "names",
+          "short-period limit",
+          "long-period limit",
+          "reset timer"
+        ],
+        "theme": "Windows system taskbar theme."
+      }
+    },
+    "reviewScope": "Approved extension of incumbent native Operate system. The user-pinned local extension required no new-world concept roll.",
+    "historical": "Historical export. Current product behavior is defined by DESIGN.md, PRODUCT.md and version 2.4 source."
+  },
+  "components": [
+    {
+      "name": "Dynamic Island at Rest",
+      "kind": "custom",
+      "refersTo": "dynamic-collapsed",
+      "description": "Portable collapsed-state illustration with synthetic readings. Actual WPF measures the shell and expands on permitted hover or keyboard focus. Top-docked geometry touches y=0 with square upper corners and 14-DIP lower corners.",
+      "html": "<div class=\"ds-dynamic\" aria-label=\"Example data, not real account readings\"><svg width=\"23\" height=\"23\" viewBox=\"0 0 34 32\" aria-hidden=\"true\"><path d=\"M1 17H8L12 6L18 27L23 13L27 17H33\" fill=\"none\" stroke=\"#A4DCBD\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><button aria-label=\"Example Claude used 71 percent\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M1.6 10H18.4M10 1.6V18.4M4.06 4.06L15.94 15.94M4.06 15.94L15.94 4.06\" fill=\"none\" stroke=\"#F0AE83\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg><span>%71</span></button><button aria-label=\"Example Codex used 64 percent\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M2 4L9.2 10L2 16M12 16H18\" fill=\"none\" stroke=\"#75DEC7\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>%64</span></button></div>",
+      "css": ".ds-dynamic{display:inline-flex;align-items:center;padding:8px 13px;border:1px solid #2B2F34;border-top:0;border-radius:0 0 14px 14px;background:#080A0D;color:#F1F5FC;font:11px \"Segoe UI Variable Text\",\"Segoe UI\",sans-serif}.ds-dynamic>svg{margin-right:13px}.ds-dynamic button{display:flex;align-items:center;width:49px;margin-right:8px;padding:0;border:0;border-radius:7px;background:transparent;color:#F0AE83;font:inherit;cursor:pointer}.ds-dynamic button:nth-of-type(2){color:#75DEC7}.ds-dynamic button span{margin-left:5px}.ds-dynamic button:hover,.ds-dynamic button:focus-visible{background:#1E2226;outline:none}"
+    },
+    {
+      "name": "Expanded Dynamic Island Account",
+      "kind": "custom",
+      "refersTo": "dynamic-expanded",
+      "description": "Portable expanded-state example with synthetic values. WPF shows full names, separate main windows, optional reported amount details, a binding-limit line and optional reset. TRAE uses the concise Dönem label with the full window name in its tooltip. Top-docked geometry touches y=0 with square upper corners and 14-DIP lower corners.",
+      "html": "<section class=\"ds-expanded\" aria-label=\"Example data, not real account readings\"><header><svg width=\"23\" height=\"23\" viewBox=\"0 0 34 32\" aria-hidden=\"true\"><path d=\"M1 17H8L12 6L18 27L23 13L27 17H33\" fill=\"none\" stroke=\"#A4DCBD\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><b>SGB Pulse</b><button>Tümü aç</button><button>Ayarlar</button></header><p>Kullanılan limitler</p><button class=\"ds-window\" aria-label=\"Example Claude limits\"><span class=\"ds-provider\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M1.6 10H18.4M10 1.6V18.4M4.06 4.06L15.94 15.94M4.06 15.94L15.94 4.06\" fill=\"none\" stroke=\"#F0AE83\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>Claude</span><span class=\"ds-limit\"><small>5 sa</small><strong>%42</strong></span><span class=\"ds-limit\"><small>Bu hafta</small><strong>%71</strong></span><span class=\"ds-track\"><i></i></span><small class=\"ds-reset\">2g · yenilenir</small></button></section>",
+      "css": ".ds-expanded{display:inline-block;padding:13px 17px 14px;border:1px solid #2B2F34;border-top:0;border-radius:0 0 14px 14px;background:#080A0D;color:#F1F5FC;font:11.5px \"Segoe UI Variable Text\",\"Segoe UI\",sans-serif}.ds-expanded header{display:flex;align-items:center;margin-bottom:14px}.ds-expanded header b{margin:0 24px 0 8px;font-size:13px;font-weight:600}.ds-expanded button{border:0;border-radius:7px;padding:0;background:transparent;color:inherit;font:inherit;cursor:pointer;text-align:left}.ds-expanded header button{margin:3px 6px;color:#AFBACF;font-size:10.5px}.ds-expanded>p{margin:0 0 7px;color:#AFBACF;font-size:10px}.ds-expanded .ds-window{width:102px;margin-right:12px}.ds-provider{display:flex;align-items:center;gap:7px}.ds-provider svg{width:20px;height:20px}.ds-limit{display:flex;align-items:center;justify-content:space-between;margin-top:8px}.ds-limit small{color:#AFBACF;font-size:10px}.ds-limit strong{color:#F0AE83;font-size:17px;font-weight:400}.ds-track{display:block;height:2px;margin-top:8px;background:#343E52}.ds-track i{display:block;width:71%;height:2px;background:#F0AE83}.ds-reset{display:block;margin-top:8px;color:#AFBACF;font-size:9.5px}.ds-expanded button:hover,.ds-expanded button:focus-visible{background:#1E2226;outline:none}"
+    },
+    {
+      "name": "Circular Floating Quotas",
+      "kind": "custom",
+      "refersTo": "floating-orb",
+      "description": "Portable Halo composition with synthetic values. All three floating styles remain 214 DIP circles; each provider has its own outer quota sector. Orbit dots the sectors; Comet adds a hover-only point.",
+      "html": "<div class=\"ds-orb\" aria-label=\"Synthetic example, not real account readings\"><svg class=\"ds-sectors\" width=\"200\" height=\"200\" viewBox=\"0 0 200 200\" aria-hidden=\"true\"><path d=\"M11.488 90.697 A89 89 0 0 1 188.512 90.697\" fill=\"none\" stroke=\"#343E52\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><path d=\"M188.512 109.303 A89 89 0 0 1 11.488 109.303\" fill=\"none\" stroke=\"#343E52\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><path d=\"M11.488 90.697 A89 89 0 0 1 151.404 27.346\" fill=\"none\" stroke=\"#F0AE83\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><path d=\"M188.512 109.303 A89 89 0 0 1 64.483 181.606\" fill=\"none\" stroke=\"#75DEC7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/></svg><button class=\"ds-orb-provider ds-orb-first\" title=\"Example Claude · Pro\" aria-label=\"Example Claude used 71 percent, open limits\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M1.6 10H18.4M10 1.6V18.4M4.06 4.06L15.94 15.94M4.06 15.94L15.94 4.06\" fill=\"none\" stroke=\"#F0AE83\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg><strong>%71</strong></button><button class=\"ds-orb-provider ds-orb-second\" title=\"Example Codex · Pro\" aria-label=\"Example Codex used 64 percent, open limits\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M2 4L9.2 10L2 16M12 16H18\" fill=\"none\" stroke=\"#75DEC7\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><strong>%64</strong></button><button class=\"ds-grip\" aria-label=\"Open all example accounts\"><svg width=\"30\" height=\"28\" viewBox=\"0 0 34 32\" aria-hidden=\"true\"><path d=\"M1 17H8L12 6L18 27L23 13L27 17H33\" fill=\"none\" stroke=\"#A4DCBD\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><small>kullanılan</small></button></div>",
+      "css": ".ds-orb{position:relative;width:214px;height:214px;border:1px solid #ffffff1f;border-radius:107px;background:#13181B;color:#F1F5FC;font-family:\"Segoe UI Variable Text\",\"Segoe UI\",sans-serif;box-sizing:border-box}.ds-sectors{position:absolute;left:6px;top:6px;pointer-events:none}.ds-orb button{position:absolute;display:flex;flex-direction:column;align-items:center;padding:0;border:0;border-radius:7px;background:transparent;color:inherit;cursor:pointer;font:inherit}.ds-orb button:hover,.ds-orb button:focus-visible{background:#ffffff14;outline:1px solid #AFBACF;outline-offset:2px}.ds-orb-provider{left:79px;width:54px}.ds-orb-first{top:27px}.ds-orb-second{top:145px}.ds-orb-provider strong{margin-top:4px;font-size:12px;font-weight:600}.ds-orb-first strong{color:#F0AE83}.ds-orb-second strong{color:#75DEC7}.ds-grip{left:86px;top:86px;width:42px}.ds-grip small{font-size:8.5px;color:#AFBACF}"
+    },
+    {
+      "name": "Reported Plan Badge",
+      "kind": "chip",
+      "refersTo": "plan-badge",
+      "description": "Reported plan is visible before row expansion. Unknown reads Plan ?; stale metadata uses a Son bilinen plan tooltip. Synthetic example only.",
+      "html": "<span class=\"ds-plan\" title=\"Example provider-reported plan: Pro\">Pro</span><span class=\"ds-plan ds-plan-unknown\" title=\"Plan bildirilmedi\">Plan ?</span>",
+      "css": ".ds-plan{display:inline-block;max-width:135px;padding:1px 6px;border-radius:4px;background:#1D2529;color:#A4DCBD;font:10px \"Segoe UI Variable Text\",\"Segoe UI\",sans-serif;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.ds-plan+.ds-plan{margin-left:8px}.ds-plan-unknown{color:#AFBACF}"
+    },
+    {
+      "name": "Compact Account Row",
+      "kind": "button",
+      "refersTo": "account-row",
+      "description": "Selectable 42-DIP row with an inline reported plan before expansion; opens one account’s limits and conditional advice. Synthetic values.",
+      "html": "<button class=\"ds-account\" aria-expanded=\"false\" aria-label=\"Example Claude Pro limits\"><span class=\"ds-row-mark\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M1.6 10H18.4M10 1.6V18.4M4.06 4.06L15.94 15.94M4.06 15.94L15.94 4.06\" fill=\"none\" stroke=\"#F0AE83\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg></span><span class=\"ds-account-copy\"><span class=\"ds-account-identity\"><span>Claude</span><span class=\"ds-account-plan\" title=\"Example provider-reported plan: Pro\">Pro</span></span><small>Bu hafta</small></span><strong>%71</strong></button>",
+      "css": ".ds-account{display:flex;align-items:center;justify-content:space-between;width:360px;height:42px;padding:0 8px;background:#13181B;color:#F1F5FC;border:1.5px solid transparent;border-radius:8px;text-align:left;font:13px \"Segoe UI\",sans-serif;cursor:pointer}.ds-account small{display:block;font-size:10.5px;color:#AFBACF}.ds-account strong{font-size:20px;font-weight:600}.ds-account:hover{background:#ffffff14}.ds-account:focus-visible{outline:none;border-color:#AFBACF}.ds-account[aria-expanded=\"true\"]{border-color:#F1F5FC}.ds-row-mark{display:flex;align-items:center;margin-right:10px}.ds-row-mark svg{width:18px;height:18px}.ds-account-copy{flex:1;min-width:0}.ds-account-identity{display:flex;align-items:center;justify-content:space-between}.ds-account-plan{max-width:135px;margin-left:8px;padding:1px 6px;border-radius:4px;background:#1D2529;color:#A4DCBD;font-size:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.ds-account strong{margin-left:8px}"
+    },
+    {
+      "name": "Selected Settings Tab",
+      "kind": "nav",
+      "refersTo": "tab-selected",
+      "description": "Current section receives raised background and sage text.",
+      "html": "<nav class=\"ds-tabs\"><button aria-current=\"page\">Görünüm</button><button>Bağlantılar</button><button>Sistem</button></nav>",
+      "css": ".ds-tabs{display:flex;gap:0;background:#13181B;font:13px \"Segoe UI\",sans-serif}.ds-tabs button{height:36px;padding:0 16px;border:2px solid transparent;border-radius:8px;background:transparent;color:#AFBACF;font:inherit;cursor:pointer}.ds-tabs button[aria-current]{background:#1D2529;color:#A4DCBD;font-weight:600}.ds-tabs button:hover{background:#ffffff14}.ds-tabs button:focus-visible{outline:none;border-color:#F1F5FC}"
+    },
+    {
+      "name": "Save Preferences",
+      "kind": "button",
+      "refersTo": "save-button",
+      "description": "Persistent footer action applies a settings draft; save failure remains visible.",
+      "html": "<button class=\"ds-save\">Kaydet</button>",
+      "css": ".ds-save{height:32px;padding:0 10px;border:2px solid transparent;border-radius:6px;background:#13181B;color:#A4DCBD;font:600 13px \"Segoe UI\",sans-serif;cursor:pointer}.ds-save:hover{background:#ffffff14}.ds-save:focus-visible{outline:none;border-color:#F1F5FC}"
+    },
+    {
+      "name": "Settings Switch",
+      "kind": "input",
+      "description": "Native labeled switch; sample represents an enabled motion preference.",
+      "html": "<label class=\"ds-switch\">Hareket efektleri<input type=\"checkbox\" role=\"switch\" checked><span aria-hidden=\"true\"></span></label>",
+      "css": ".ds-switch{display:flex;align-items:center;justify-content:space-between;gap:16px;width:360px;background:#13181B;color:#F1F5FC;font:13px \"Segoe UI\",sans-serif;position:relative}.ds-switch input{position:absolute;right:0;width:40px;height:20px;opacity:0;cursor:pointer}.ds-switch span{width:40px;height:20px;border:1px solid #AFBACF;border-radius:10px;position:relative}.ds-switch span:after{content:\"\";position:absolute;left:3px;top:3px;width:12px;height:12px;border-radius:50%;background:#AFBACF}.ds-switch input:checked+span{background:#A4DCBD;border-color:#A4DCBD}.ds-switch input:checked+span:after{left:23px;background:#13181B}.ds-switch input:focus-visible+span{outline:2px solid #F1F5FC;outline-offset:3px}"
+    },
+    {
+      "name": "Taskbar Identity",
+      "kind": "custom",
+      "refersTo": "taskbar-identity",
+      "description": "Default taskbar composition: provider mark inside a thin quota ring, visible name and a second limit line. Native width fitting reduces named providers and adds +N; synthetic example values.",
+      "html": "<div class=\"ds-identity\" aria-label=\"Example Codex taskbar limits\"><svg width=\"27\" height=\"27\" viewBox=\"0 0 27 27\" aria-hidden=\"true\"><circle cx=\"13.5\" cy=\"13.5\" r=\"12.5\" fill=\"none\" stroke=\"#343E52\" stroke-width=\"1.8\"/><circle cx=\"13.5\" cy=\"13.5\" r=\"12.5\" fill=\"none\" stroke=\"#75DEC7\" stroke-width=\"1.8\" stroke-dasharray=\"50.27 78.54\" transform=\"rotate(-90 13.5 13.5)\"/><path d=\"M7 9L12 13.5L7 18M15 18H20\" fill=\"none\" stroke=\"#75DEC7\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span><b>Codex</b><strong>5sa %64 · Hft %38</strong></span><button aria-label=\"Open all example accounts\">+1</button></div>",
+      "css": ".ds-identity{display:inline-flex;align-items:center;gap:8px;padding:4px 5px;background:#13181B;color:#F1F5FC;font:11.5px \"Segoe UI Variable Text\",\"Segoe UI\",sans-serif}.ds-identity b,.ds-identity strong{display:block;font-weight:600}.ds-identity strong{margin-top:3px;color:#75DEC7}.ds-identity button{padding:2px 4px;border:0;border-radius:6px;background:transparent;color:#AFBACF;font:inherit;cursor:pointer}.ds-identity button:hover,.ds-identity button:focus-visible{background:#ffffff14;outline:1px solid #AFBACF}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A floating quota companion",
+    "overview": "SGB Pulse is a small native Windows instrument. Each product keeps its own real quota; selecting an account reveals its limits, resets and conditional advice. The user specified the macOS-like horizontal black Dynamic Island and retained Windows taskbar and floating gauges as separate presentations. Native source and labeled captures establish this extension of the existing Operate system; no new-world concept roll or external concept seed is claimed.\n\nDynamic Island is the default presentation: provider marks and limits at rest, then full names, separate quota windows and optional resets on hover or keyboard focus. Windows taskbar defaults to Identity with marks, rings, visible names and limits; Rings, Ribbon, Dial and Flow remain alternatives. Floating gauges offer circular Halo, Orbit and Comet, with Orbit selected initially within that mode. All three lead to the same compact account panel with inline reported plan badges and preserve the established charcoal, sage and native text language.",
+    "keyCharacteristics": [
+      "A black expanding Dynamic Island, Windows taskbar instrument or draggable floating gauges.",
+      "Charcoal panels, sage actions and provider-colored quota marks, lines and arcs.",
+      "One selected account's details, explicit Save and conditional forecasts.",
+      "Quiet idle states, optional hover motion and honest unavailable readings."
+    ],
+    "rules": [
+      {
+        "name": "The Independent Products Rule",
+        "body": "A shared email never merges product quota, identity or forecast.",
+        "section": "colors"
+      },
+      {
+        "name": "The Truth Before Color Rule",
+        "body": "Stale, expired or absent current readings use an em dash in the island and compact list. Details explain the state; a missing value never becomes a convincing live zero.",
+        "section": "colors"
+      },
+      {
+        "name": "The Captioned Number Rule",
+        "body": "Keep product identity and usage mode discoverable for every reading: collapsed Dynamic Island uses marks plus tooltips and automation names; its expansion and the detail panel expose names and quota labels. Numerical values never animate to simulate consumption.",
+        "section": "typography"
+      },
+      {
+        "name": "The Reveal One Rule",
+        "body": "Expand one account's detail and advice section at a time. Do not restore the superseded card grid or broad multi-quota desk as the default view.",
+        "section": "layout"
+      },
+      {
+        "name": "The Three Presentations Rule",
+        "body": "Dynamic Island, Windows taskbar and floating gauges are independent, supported choices. Do not make a style within one mode stand in for another mode.",
+        "section": "layout"
+      },
+      {
+        "name": "The Quiet Idle Rule",
+        "body": "Dynamic Island animates shell width and height over 240 milliseconds with exponential ease-out, exponent five; departure starts a 240-millisecond collapse delay. Keyboard focus also expands it, focus within prevents delayed collapse and Escape collapses it. With reduced motion or motion disabled, the state changes without the size animation. Comet's decorative point travels only during hover: ten updates per second, three seconds per cycle. Its timer stops on leave, hide, refresh or close. The floating-gauge hover opacity transition lasts 180 milliseconds. Motion requires the saved preference and Windows animation permission; quota values stay unchanged and neither island runs continuous decorative motion at idle.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep quota, usage mode, product identity and freshness semantics together.",
+      "Do preserve all three presentation choices and use Dynamic Island as the new-install default.",
+      "Do keep Dynamic Island compact at rest and reveal names, separate limits and optional resets on expansion.",
+      "Do keep Dynamic Island attached to its selected edge and verify hover on the shown native window.",
+      "Do keep every floating style circular and each provider's quota sector separate; use +N for overflow.",
+      "Do preserve visible names in the taskbar Identity presentation as available space reduces the shown provider count.",
+      "Do show reported plan badges before account expansion, with Plan ? for unknown and last-known labeling for stale metadata.",
+      "Do preserve placement, explicit account opt-outs and settings drafts until Save succeeds.",
+      "Do gate optional motion on the relevant hover/focus state, the saved preference and Windows animation permission.",
+      "Do label synthetic captures and keep live-account evidence outside distributable assets."
+    ],
+    "donts": [
+      "Don't combine Cursor and Grok allowances because their email or branding matches.",
+      "Don't show unavailable quota as zero or infer quota from a receipt.",
+      "Don't turn Orbit's initial floating style into the default presentation or remove the supported taskbar choice.",
+      "Don't restore the superseded card grid or broad account desk as the default detail surface.",
+      "Don't infer a paid plan or live quota from a discovered application, colored mark or catalog entry.",
+      "Don't forecast without the real timing and usage evidence required by the advice engine.",
+      "Don't animate numerical consumption or run decorative motion continuously at idle."
+    ]
+  }
+}
