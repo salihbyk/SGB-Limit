@@ -1,54 +1,106 @@
 # SGB Limit
 
-Windows için yapay zekâ kullanım ve kota paneli. Desteklenen hesapların bu bilgisayardaki mevcut oturumlarını kullanır. Kullanımı görev çubuğunda, ekran kenarına bağlı Dinamik Ada'da veya dairesel yüzen göstergede takip edebilirsin.
+An open-source Windows quota tracker for **Claude Code, Codex, Antigravity** and other supported AI accounts. Keep usage limits in view with a native WPF Dynamic Island, an adaptive taskbar monitor or a circular floating widget.
 
-**[Windows x64 için indir](https://github.com/salihbyk/SGB-Limit/releases/latest)** · [Güvenlik](SECURITY.md) · [Katkıda bulun](CONTRIBUTING.md) · [MIT lisansı](LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Windows x64](https://img.shields.io/badge/Windows-x64-0078D4?logo=windows)
+![.NET 10](https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet)
+[![Latest release](https://img.shields.io/github/v/release/salihbyk/SGB-Limit?label=Release)](https://github.com/salihbyk/SGB-Limit/releases/latest)
 
-![SGB Limit 2.4: görev çubuğu, Dinamik Ada ve kullanım paneli](docs/images/hero.png)
+**[Download for Windows x64](https://github.com/salihbyk/SGB-Limit/releases/latest)** · **[Türkçe](README.tr.md)** · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
-*Örnek veriler; gerçek WPF arayüzü.*
+<a href="docs/images/laptop-hero.png"><img src="docs/images/laptop-hero.png" alt="SGB Limit native WPF quota tracker with its Dynamic Island on a Windows desktop, presented in a laptop mockup" width="1000"></a>
 
-## İndir ve çalıştır
+*Native WPF interface with synthetic account and quota data. The laptop is a presentation mockup, not a hardware compatibility claim.*
 
-1. [Son sürüm sayfasındaki](https://github.com/salihbyk/SGB-Limit/releases/latest) Windows x64 ZIP paketini indir.
-2. ZIP dosyasına sağ tıkla ve **Tümünü ayıkla** seçeneğini kullan.
-3. Ayıklanan klasördeki `SGBLimit.exe` dosyasını çalıştır.
-4. Ayarlar'dan görünümü seç, seçeneklerini düzenle ve son adımda **Kaydet** düğmesine bas.
+## Download and run
 
-Paket .NET 10 çalışma zamanını içerir. Ayrıca .NET kurman gerekmez. Uygulama Windows x64 üzerinde, geliştirme bilgisayarında test edildi. Farklı bilgisayarlar, çoklu ekranlar ve tüm görev çubuğu düzenleri için aynı sonuç garanti edilmez.
+1. Download the Windows x64 ZIP from the [latest release](https://github.com/salihbyk/SGB-Limit/releases/latest).
+2. Choose **Extract all**, then run `SGBLimit.exe` from the extracted folder.
+3. Open Settings, choose a display mode and apply your choices with **Save** on the final step.
 
-Uygulama taşınabilir paket olarak çalışır. Masaüstü veya Başlat menüsünde kullanmak için Windows üzerinden `SGBLimit.exe` dosyasının kısayolunu oluşturabilirsin.
+The portable package includes the .NET 10 runtime. No separate .NET installation is required. You can create a desktop or Start menu shortcut through Windows. The current interface is in Turkish.
 
-Paket henüz kod imzalı değildir. Windows yayıncıyı doğrulayamayabilir. Sürüm sayfasında SHA-256 özeti varsa indirdiğin dosyayla karşılaştırabilirsin. Bu kontrol dosyanın yayımlanan paketle eşleştiğini gösterir, yazılımın güvenli olduğunu veya yayıncının kimliğini tek başına kanıtlamaz.
+**The executable is unsigned.** Windows may show an unverified-publisher warning. A published SHA-256 hash can confirm that a download matches the release file, but does not establish publisher identity or software safety. Testing has been performed on the development Windows x64 PC. Other PCs, multi-monitor setups and taskbar configurations need their own checks.
 
-## 2.4'te neler var?
+## A Dynamic Island for Windows
 
-- **Alana uyum sağlayan görev çubuğu.** Alan daraldığında önce isimli görünüm küçülür, sonra hesaplar ikon ve yüzdeyle gösterilir. Hesaplar hâlâ sığmıyorsa `+N` kullanılır. Güvenilir alan ölçümü yoksa sistem tepsisi üzerinden erişim sürer.
-- **3 veya 5 çubuklu Sinyal.** Çubuklar Kullanılan veya Kalan tercihini izler. Sinyal, dar görev çubuğu yüzdesi ve panel, hesabın bağlayıcı kotasını aynı şekilde esas alır. Küçük oranlar tam çubuğa yuvarlanmaz.
-- **Ekran kenarında Dinamik Ada.** Sağ ve sol kenarda üst, orta ve alt olmak üzere altı dikey konum bulunur. Üst ve alt kenarlarda da sol, orta ve sağ konumlar seçilebilir.
-- **350 ms açılma geçişi.** Ada genişlerken içerik hafifçe açılır. Fare hareketi veya veri yenilemesi geçişi yarıda tersine çevirebilir. Windows'un hareket azaltma tercihi uygulanır.
-- **Üç adımlı görünüm ayarları.** Önce gösterim biçimi, sonra o biçimin seçenekleri, ardından yerleşim ve genel görünüm seçilir. Geri dönmek seçimleri korur. Değişiklikler son adımdaki Kaydet ile uygulanır.
-- **Güncel ve eski verinin ayrılması.** Bilinmeyen kota `—` ile gösterilir. Eski okumalar güncel kota gibi sunulmaz.
+Dock the island to a screen edge. Hover to expand from a compact overview into account names and quotas, then click an account for details. The 350 ms transition supports direction changes and Windows reduced-motion preferences.
 
-## Sağlayıcılar ve kota doğruluğu
+<a href="docs/images/dynamic-island-states.png"><img src="docs/images/dynamic-island-states.png" alt="Compact and expanded SGB Limit Dynamic Island showing Claude Code usage, Codex limits and Antigravity quota with synthetic data in a laptop mockup" width="1000"></a>
 
-Kota entegrasyonları Claude, Codex, Antigravity, Grok Bot, Cursor, TRAE ve yapılandırılmış OpenCode Go'yu kapsar. Entegrasyonun çalışması ilgili sağlayıcıya, yerel giriş durumuna ve desteklenen oturum biçimine bağlıdır. Bir uygulamanın bulunması ücretli aboneliğin veya kotanın doğrulandığı anlamına gelmez. Farklı ürünlerin kotaları birleştirilmez.
+*Compact and expanded native interface, shown with sample data in a laptop mockup.*
 
-Antigravity çalışırken güncel kota yerel IDE servisinden okunur. IDE kapalıysa aynı hesaba ait, süresi geçmemiş kayıtlı oturumla desteklenen bulut okuması denenebilir. Okuma yapılamadığında yalnız hesabı doğrulanmış son okuma korunur. Görev çubuğu ve adada `*`, panelde okuma saati ve **güncel değil** etiketi görünür. Bu değer canlı kota değildir. Süresi dolmuş veya reddedilmiş oturumla kesintisiz erişim vaat edilmez.
+## A taskbar monitor that fits the available space
 
-TRAE desteği uluslararası dolar bazlı plan içindir. Çin, Enterprise ve diğer paketler ayrıca doğrulanmalıdır. Sağlayıcılar API'lerini ve giriş biçimlerini değiştirebilir. Tüm aboneliklerin otomatik bulunması garanti edilmez. Eksik dönem veya yenileme bilgisi için yüzde, tarih ya da kullanım tahmini uydurulmaz.
+Choose **Identity, Rings, Ribbon, Dial or Signal**. As space narrows, named rows become compact icons with percentages. Overflow uses `+N`. If taskbar space cannot be measured reliably, the tray remains available.
 
-## Gizlilik
+<a href="docs/images/taskbar-styles.png"><img src="docs/images/taskbar-styles.png" alt="Five current Windows taskbar monitor styles: Identity, Rings, Ribbon, Dial and Signal, plus compact quota display, using synthetic WPF data" width="1000"></a>
 
-- Uygulama desteklenen yerel oturum dosyalarını yalnız okur. Giriş bilgilerini uygulama ayarlarına kopyalamaz. Her Windows kullanıcısının kendi mevcut oturumu gerekir.
-- Kota istekleri ilgili sağlayıcının API'sine veya yerel IDE servisine gider. Uygulama tamamen çevrimdışı çalışmaz.
-- Kaynak kodunda ayrı bir telemetri veya analiz gönderimi bulunmuyor. Bu ifade bağımsız bir güvenlik denetimi yapıldığı anlamına gelmez.
-- Ayarlar `%APPDATA%\SGBPulse`, kota önbelleği `%LOCALAPPDATA%\SGBPulse` altında tutulur. Önbellek hesap tanımlayıcıları, plan ve kullanım bilgisi içerebilir. Eski klasör adı, mevcut kullanıcı ayarlarını korumak için sürdürülür.
-- Gerçek hesap ekranlarını, önbellekleri, giriş dosyalarını ve erişim anahtarlarını issue veya pull request'e ekleme. Güvenlik açığı için [özel bildirim yolunu](SECURITY.md) kullan.
+Signal has three or five bars. Its used/remaining display follows the same binding quota as the details panel, including small fractions. Missing readings do not turn into a full signal.
 
-## Kaynaktan çalıştır
+<details>
+<summary>Compare the five styles without names, and all four Signal options</summary>
 
-Windows ve **.NET 10 SDK** gerekir. Son yerel doğrulamada SDK 10.0.401 kullanıldı.
+![Five name-free AI quota monitor styles for the Windows taskbar](docs/images/taskbar-variants.png)
+
+![SGB Limit Signal with three or five bars showing used and remaining Claude Code, Codex, Antigravity and Cursor quotas](docs/images/signal-options.png)
+
+</details>
+
+<a href="docs/images/taskbar-desktop.png"><img src="docs/images/taskbar-desktop.png" alt="SGB Limit quota monitor rendered in the actual Windows taskbar with synthetic account data" width="1000"></a>
+
+*Native taskbar placement with synthetic readings. Desktop behavior can vary with Windows configuration.*
+
+## Three floating styles
+
+**Halo, Orbit and Comet** show each provider in its own circular sector. Open the panel for period limits, reset information and the plan reported by the provider.
+
+<a href="docs/images/floating-styles.png"><img src="docs/images/floating-styles.png" alt="Halo, Orbit and Comet circular floating widgets in SGB Limit, rendered by WPF with synthetic AI usage data" width="1000"></a>
+
+*Native floating widgets with synthetic readings.*
+
+## Side docks and step-by-step settings
+
+The Dynamic Island offers six vertical docks: top, center and bottom on either side. Top and bottom edges also support left, center and right positions. Appearance settings progress through display mode, its options and placement. Going back preserves the draft. Only the final Save applies it.
+
+<a href="docs/images/vertical.png"><img src="docs/images/vertical.png" alt="Vertical SGB Limit Dynamic Island docked to the side of a Windows desktop, with synthetic quota readings" width="760"></a>
+
+*Native side-dock examples with synthetic data.*
+
+## Supported accounts and honest readings
+
+Quota integrations cover **Claude, Codex, Antigravity, Grok Bot, Cursor, TRAE and configured OpenCode Go**. Each depends on supported local login formats and provider services. Detecting an installed app does not prove a paid plan. Different products' allowances are kept separate.
+
+Unknown quotas show `—`. Historical readings are marked stale rather than presented as live limits. When Antigravity is closed, a valid stored session for the same verified account may allow a cloud read. Otherwise, the last verified reading is marked with `*` in compact views and its read time in the panel. Expired or rejected sessions do not guarantee continued access. TRAE support targets international dollar-based plans, not every region or plan type.
+
+## Privacy
+
+Supported local credentials are **read only** and are not copied into app settings. Requests go to the respective provider API or local IDE service. This is not an offline-only application.
+
+Settings live in `%APPDATA%\SGBPulse`, with quota caches in `%LOCALAPPDATA%\SGBPulse`. These legacy folder names preserve existing settings. Caches can contain account identifiers, plan and usage information. No separate telemetry sender is present in the source, and no independent security audit is claimed. Never attach real credentials, caches or account screenshots to issues. See [Security](SECURITY.md).
+
+## Questions about AI usage limits on Windows
+
+### How do I monitor Claude Code and Codex usage?
+
+Sign in to a supported local CLI or desktop application, then open SGB Limit. It displays the quota windows that the provider actually reports for that account. An installed application alone does not prove a paid plan or a valid session.
+
+### Can I see remaining quota instead of usage?
+
+Yes. Choose used or remaining in the panel or appearance settings. Signal bars and the compact taskbar percentage follow the same binding quota as the account panel.
+
+### Does the Dynamic Island work away from the top edge?
+
+Yes. Choose a horizontal top/bottom dock or one of six vertical side docks. It is a native Windows overlay; a laptop notch or special display is not required.
+
+### Will Antigravity quota stay live when the IDE closes?
+
+A supported, unexpired stored session for the same account can permit a cloud read. Otherwise the identified last reading is explicitly marked stale. Expired sessions are not presented as fresh quotas.
+
+## Build from source
+
+Requires Windows and the **.NET 10 SDK**. Exit any running SGB Limit instance before starting a normal development build.
 
 ```powershell
 git clone https://github.com/salihbyk/SGB-Limit.git
@@ -58,28 +110,16 @@ dotnet test .\tests\TokenTray.Tests\TokenTray.Tests.csproj -c Release
 dotnet run --project .\src\TokenTray\TokenTray.csproj
 ```
 
-Normal geliştirme sürümünü açmadan önce çalışan SGB Limit'ten çık. Uygulama tek örnek çalışır.
-
-Windows x64 için kendi çalışma zamanını içeren yayın çıktısı:
+For a self-contained Windows x64 build:
 
 ```powershell
 dotnet publish .\src\TokenTray\TokenTray.csproj -c Release -r win-x64 -o .\artifacts\win-x64
 ```
 
-Dağıtım paketine `LICENSE`, `THIRD_PARTY_NOTICES.md` ve kullanılan .NET çalışma zamanının lisans ve üçüncü taraf bildirimleri eklenmelidir. Yayın çıktısına kişisel ayar veya hesap dosyası ekleme.
+The [contribution guide](CONTRIBUTING.md) covers synthetic WPF checks and native desktop probes. A CI configuration is provided in [docs/automation/windows-ci.yml](docs/automation/windows-ci.yml), but is not active as a GitHub workflow.
 
-`--verify <tam-klasör-yolu>` sentetik verilerle WPF çizimlerini ve görünüm kontrollerini üretir. Hazır CI yapılandırması bu yolu kullanır; ilk yayın oturumunda iş akışı yazma yetkisi olmadığı için henüz etkin değildir (bkz. docs/automation/windows-ci.yml). Gerçek masaüstü, görev çubuğu ve fare etkileşimi kontrolleri [katkı rehberinde](CONTRIBUTING.md) açıklanır. CI sonucu, başka bilgisayarlarda veya canlı sağlayıcı oturumlarında doğrulama yapıldığı anlamına gelmez.
+## Built on TokenTray
 
-## Kaynak ve lisans
+SGB Limit is an MIT-licensed derivative of **[TokenTray by Emre Canik](https://github.com/emrecengdev/tokentray)**. Its provider integrations, polling and quota core, original taskbar renderers and geometric provider marks build on that upstream work. SGB Limit work includes the Dynamic Island, a circular floating redesign, adaptive taskbar behavior, Signal display, Turkish panels and progressive settings, alongside integration and stale-reading refinements.
 
-SGB Limit, [Emre Canik'in TokenTray projesinden](https://github.com/emrecengdev/tokentray) türetilmiştir ve [MIT lisansını](LICENSE) korur. `TokenTray.slnx`, `src/TokenTray.Core`, `src/TokenTray` ve bazı dahili ad alanları bu kökeni taşır. Uygulamanın kullanıcıya görünen adı SGB Limit, çalıştırılabilir dosyası `SGBLimit.exe`'dir.
-
-[Üçüncü taraf bildirimleri](THIRD_PARTY_NOTICES.md) kaynak kökenini, çalışma zamanı bildirimlerini ve marka kullanımını açıklar. Bu proje, desteklenen sağlayıcıların resmî ürünü değildir.
-
-## English summary
-
-SGB Limit 2.4 is a native Windows WPF quota monitor for supported AI accounts. Choose an adaptive taskbar display, an edge-docked Dynamic Island or a circular floating widget. Three/five Signal bars follow the same used/remaining quota as the details panel. Unknown quotas display `—`, and historical readings are marked stale.
-
-[Download the Windows x64 package](https://github.com/salihbyk/SGB-Limit/releases/latest), extract it and run `SGBLimit.exe`. The self-contained package includes .NET 10 and is currently unsigned. Testing on the development PC does not establish compatibility with every Windows setup.
-
-Existing local credentials are read only. Requests go to the respective provider API or local IDE service. Local caches can contain account information. No separate telemetry sender is present in the source, and no independent security audit is claimed. Derived from [TokenTray](https://github.com/emrecengdev/tokentray), distributed under MIT with upstream attribution preserved.
+The original copyright and MIT notice are preserved in [LICENSE](LICENSE). Internal `TokenTray` project and namespace names retain that history. See [Third-party notices](THIRD_PARTY_NOTICES.md) for runtime and artwork details. This independent project does not imply endorsement by the upstream author or the supported providers.
